@@ -1,0 +1,58 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "MMA",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.mma",
+					"match": "/{2}([^/].*)?$"
+				},
+				{
+					"name": "comment.block.mma",
+					"begin": "^(/\\*)",
+					"end": "(\\*/)$"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.mma",
+					"match": "\\b(?i)(Accent|Adjustvolume|After|Allgrooves|Alltracks|Arpeggiate|Articulate|Author|Autosolotracks|Beatadjust|Begin|Call|Capo|Channel|Channelinit|Channelpref|Chordadjust|Chords|Chshare|Cmdline|Comment|Compress|Copy|Cresc|Cut|Debug|Dec|Decresc|Defalias|Default|Defcall|Defchord|Defgroove|Define|Delay|Delete|Direction|Doc|Docvar|Drumtype|Drumvoltr|Dupriff|Duproot|Else|End|Endif|Endmset|Endrepeat|Eof|Fermata|Forceout|Fretnoise|Goto|Groove|Grooveclear|Harmony|Harmonyonly|Harmonyvolume|If|Ifend|Inc|Include|Invert|Keysig|Label|Limit|Lyric|Mallet|Midi|Midiclear|Midicopyright|Midicresc|Midicue|Mididecresc|Mididef|Midifile|Midiglis|Midiinc|Midimark|Midinote|Midipan|Midiseq|Midisplit|Miditext|Miditname|Midivoice|Midivolume|Midiwheel|Mmaend|Mmastart|Moctave|Mset|Msetend|Newset|Notespan|Octave|Off|On|Ornament|Patch|Plugin|Print|Printactive|Printchord|Range|Rduration|Repeat|Repeatend|Repeatending|Restart|Riff|Rndseed|Rndset|Rpitch|Rskip|Rtime|Rvolume|Scaletype|Seq|Seqclear|Seqrnd|Seqrndweight|Seqsize|Sequence|Set|Setincpath|Setlibpath|Setmidiplayer|Setoutpath|Setplugpath|Setsynctone|Shape|Showvars|Stackvalue|Sticky|Stretch|Strum|Strumadd|Swell|Swingmode|Synchronize|Tempo|Time|Timesig|Tone|Tonetr|Transpose|Trigger|Truncate|Tuning|Tweaks|Unify|Unset|Use|Varclear|Vexpand|Voice|Voicetr|Voicevoltr|Voicing)\\b"
+				},
+				{
+					"name": "keyword.other.mma",
+					"match": "\\b(?i)(Aria|Arpeggio|Bass|Chord|Drum|Melody|Plectrum|Scale|Solo|Walk)(\\-[A-Z0-9]*)*\\b"
+				},
+				{
+					"name": "constant.numeric.mma",
+					"match": "^[0-9]*\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.mma",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.mma",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.mma"
+}
